@@ -5,6 +5,8 @@ Docker image of SonarQube.
 It is inspired by the upstream SonarQube Docker image:
 https://github.com/SonarSource/docker-sonarqube
 
+Froked from OpenShiftDemos/sonarqube-openshift-docker
+
 # Docker Hub
 
 The SonarQube image is available on Docker Hub at: https://hub.docker.com/_/sonarqube
@@ -19,4 +21,6 @@ SonarQube with Embedded H2 Database:
 
 SonarQube with PostgreSQL Database:
 
-    oc new-app -f sonarqube-postgresql-template.yaml --param=SONARQUBE_VERSION=6.7
+    oc new-app -f sonarqube-postgresql-template.yaml --param=SONARQUBE_VERSION=8.8.0-community
+    
+It will works also on OpenShift 4.x
