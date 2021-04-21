@@ -1,4 +1,4 @@
-# SonarQube on OpenShift
+# SonarQube on OpenShift 3.x/4.x
 This repo contains all of the resources required to build an OpenShift-specific
 Docker image of SonarQube.
 
