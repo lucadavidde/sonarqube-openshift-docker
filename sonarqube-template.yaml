@@ -148,7 +148,7 @@ objects:
         storage: ${SONAR_VOLUME_CAPACITY}
 parameters:
 - displayName: SonarQube version
-  value: "6.7"
+  value: "${SONARQUBE_VERSION}"
   name: SONARQUBE_VERSION
   required: true
 - description: Volume space available for SonarQube
