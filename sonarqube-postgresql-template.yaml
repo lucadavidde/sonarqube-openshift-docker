@@ -1,5 +1,5 @@
 kind: Template
-apiVersion: v1
+apiVersion: template.openshift.io/v1
 metadata:
   annotations:
     description: The SonarQube OpenShift template
@@ -49,9 +49,25 @@ objects:
         tags: sonarqube
       from:
         kind: DockerImage
-        name: openshiftdemos/sonarqube:${SONARQUBE_VERSION}
+        name: sonarqube:${SONARQUBE_VERSION}
       importPolicy: {}
       name: ${SONARQUBE_VERSION}
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: postgresql-95
+    name: postgresql-95
+  spec:
+    tags:
+    - annotations:
+        description: The PostegreSql Docker image
+        tags: postgresql-95
+      from:
+        kind: DockerImage
+        name: centos/postgresql-95-centos7:latest
+      importPolicy: {}
+      name: latest
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
@@ -243,8 +259,7 @@ objects:
         - postgresql
         from:
           kind: ImageStreamTag
-          name: postgresql:9.5
-          namespace: openshift
+          name: postgresql-95:latest
       type: ImageChange
     - type: ConfigChange
 - apiVersion: v1
