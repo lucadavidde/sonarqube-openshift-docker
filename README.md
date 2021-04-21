@@ -5,11 +5,11 @@ Docker image of SonarQube.
 It is inspired by the upstream SonarQube Docker image:
 https://github.com/SonarSource/docker-sonarqube
 
-Froked from OpenShiftDemos/sonarqube-openshift-docker
+Forked from OpenShiftDemos/sonarqube-openshift-docker
 
 # Docker Hub
 
-The SonarQube image is available on Docker Hub at: https://hub.docker.com/_/sonarqube
+Images are taken from official SonarQube Docker Hub at: https://hub.docker.com/_/sonarqube
 
 # Deploy on OpenShift
 You can do use the provided templates with an embedded or postgresql database to deploy SonarQube on 
